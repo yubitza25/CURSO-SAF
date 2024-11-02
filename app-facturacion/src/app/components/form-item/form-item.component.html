@@ -1,0 +1,63 @@
+<!-- form-item.component.html -->
+<form class="w-50" (ngSubmit)="onSubmit(itemForm)" #itemForm="ngForm">
+    <div class="form-group">
+        <input
+            name="product"
+            placeholder="Producto"
+            class="form-control m-3"
+            [(ngModel)]="item.product"
+            required minlength="5"
+            #product="ngModel"
+        />
+        <div *ngIf="product.invalid && (product.dirty || product.touched)">
+            <div *ngIf="product.errors?.['required']" class="text-danger mx-3">
+                Nombre del producto es requerido!
+            </div>
+            <div *ngIf="product.errors?.['minlength']" class="text-danger mx-3">
+                Nombre del producto debe de tener al menos 5 caracteres!
+            </div>
+        </div>
+    </div>
+
+    <!-- Campo price -->
+    <div class="form-group">
+        <input
+            name="price"
+            type="number"
+            placeholder="Precio"
+            class="form-control m-3"
+            [(ngModel)]="item.price"
+            required min="10"
+            #price="ngModel"
+        />
+        <div *ngIf="price.invalid && (price.dirty || price.touched)">
+            <div *ngIf="price.errors?.['required']" class="text-danger mx-3">
+                Precio es requerido!
+            </div>
+            <div *ngIf="price.errors?.['min']" class="text-danger mx-3">
+                Precio debe ser mayor o igual a 10!
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input
+            name="quantity"
+            type="number"
+            placeholder="Cantidad"
+            class="form-control m-3"
+            [(ngModel)]="item.quantity"
+            required min="1"
+            #quantity="ngModel"
+        />
+        <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
+            <div *ngIf="quantity.errors?.['required']" class="text-danger mx-3">
+                Cantidad es requerida!
+            </div>
+            <div *ngIf="quantity.errors?.['min']" class="text-danger mx-3">
+                Cantidad debe ser mayor o igual a 1!
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Agregar Item</button>
+</form>

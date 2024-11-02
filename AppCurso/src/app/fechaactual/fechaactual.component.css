@@ -1,0 +1,13 @@
+.fecha-actual {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    color: #4a90e2; /* Un color azul agradable */
+    text-align: center; /* Centra el texto */
+    margin: 20px auto; /* Añadir margen superior/inferior */
+    padding: 10px;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: fit-content; /* Ajustar el ancho al contenido */
+    }
+   
